@@ -21,6 +21,12 @@ services:
     depends_on:
     - redis
     - mongodb
+  cart:
+    image: joindevops/cart:v1
+    container_name: cart
+    depends_on:
+    - catalogue
+    - redis
   mysql:  
     image: shirisha104/mysql:v1
     container_name: mysql
