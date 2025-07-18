@@ -22,7 +22,7 @@ services:
     - redis
     - mongodb
   cart:
-    image: joindevops/cart:v1
+    image: shirisha104/cart:v1
     container_name: cart
     depends_on:
     - catalogue
