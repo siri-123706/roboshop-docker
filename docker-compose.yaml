@@ -46,10 +46,6 @@ services:
     image: shirisha104/payment:v1
     container_name: payment
     environment:
-       payment:
-    image: joindevops/payment:v1
-    container_name: payment
-    environment:
       CART_HOST: cart
       CART_PORT: 8080
       USER_HOST: user
