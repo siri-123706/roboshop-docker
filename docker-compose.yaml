@@ -31,7 +31,7 @@ services:
     image: shirisha104/mysql:v1
     container_name: mysql
   shipping:
-    image: shirisha104/shipping
+    image: shirisha104/shipping:v1
     container_name: shipping
     depends_on: 
     - mysql
