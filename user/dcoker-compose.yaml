@@ -1,0 +1,35 @@
+networks:
+  default:
+     driver: bridge
+     name: roboshop
+     #external: true # created network already using docker network roboshopservices:
+services:
+  mongodb:
+    image: shirisha104/mongodb:v1
+    container_name: mongodb
+  catalogue:
+    image: shirisha104/catalogue:v1
+    container_name: catalogue
+    depends_on:
+    - mongodb
+  redis:
+    image: redis:7.0
+    container_name: redis
+  user:
+    image: shirisha104/user:v1
+    container_name: user
+    depends_on:
+    - redis
+    - mongodb
+  mysql:  
+    image: shirisha104/mysql:v1
+    container_name: mysql
+  shipping:
+    image: shirisha104/shipping
+    container_name: shipping
+    depends_on: 
+    - mysql
+    - cart
+
+
+  
