@@ -16,7 +16,7 @@ RUN apk add --no-cache pcre
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
 USER roboshop
 # copy installed python packages from builder
-COPY --from=builder /install /user/local
+COPY --from=builder /install /usr/local
 # copy application code
 COPY --chown=roboshop:roboshop payment.ini .
 COPY --chown=roboshop:roboshop *.py .
